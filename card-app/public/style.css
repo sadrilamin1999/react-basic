@@ -17,6 +17,7 @@
   outline: none;
   box-shadow: 10px 10px 10px rgb(204, 204, 204);
   border-radius: 5px;
+  display: inline-block;
 }
 .card-title {
   color: rgb(49, 46, 46);
