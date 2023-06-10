@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div>
       <h1 className="heading">Todo App</h1>
-      <Card />
+      <Card title="Call Father" des="This is description1." />
     </div>
   );
 };
