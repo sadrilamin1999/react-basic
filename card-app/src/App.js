@@ -1,11 +1,15 @@
 import React from "react";
 import Card from "./components/Card";
+import Data from "./Data.json";
 
 const App = () => {
+  const dynamicCard = Data.map((item) => (
+    <Card title={item.title} des={item.des} />
+  ));
   return (
     <div>
       <h1 className="heading">Todo App</h1>
-      <Card title="Call Father" des="This is description1." />
+      {dynamicCard}
     </div>
   );
 };
