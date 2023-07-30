@@ -1,22 +1,15 @@
 import React, { useState } from "react";
 
 const Form = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [user, setUser] = useState({ name: "", email: "", password: "" });
+  const { name, email, password } = user;
 
-  const handleNameChange = (e) => {
-    setName(e.target.value);
+  const handleChange = (e) => {
+    const fildName = e.target.name;
+    setUser({ ...user, [e.target.name]: e.target.value });
   };
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
   const handleSubmit = (e) => {
-    console.log(name, email, password);
+    console.log(user);
     e.preventDefault();
   };
   return (
@@ -31,7 +24,7 @@ const Form = () => {
             name="name"
             id="name"
             value={name}
-            onChange={handleNameChange}
+            onChange={handleChange}
             required
           />
         </div>
@@ -42,7 +35,7 @@ const Form = () => {
             name="email"
             id="email"
             value={email}
-            onChange={handleEmailChange}
+            onChange={handleChange}
             required
           />
         </div>
@@ -53,7 +46,7 @@ const Form = () => {
             name="password"
             id="password"
             value={password}
-            onChange={handlePasswordChange}
+            onChange={handleChange}
             required
           />
         </div>
