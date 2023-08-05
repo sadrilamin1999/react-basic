@@ -1,15 +1,16 @@
-import Child from "../src/components/Child";
+import { useState } from "react";
+import Child from "./components/Child";
 
 const App = () => {
-  const data = "Hello I am from parent";
+  const [rectveData, setReciveData] = useState("");
 
-  const handleChildData = (data) => {
-    console.log(data);
+  const dataReciver = (dataFromChild) => {
+    setReciveData(dataFromChild);
   };
-
   return (
     <div>
-      <Child data={data} onChildData={handleChildData} />
+      <Child dataReciver={dataReciver} />
+      <p>{rectveData}</p>
     </div>
   );
 };
