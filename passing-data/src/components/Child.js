@@ -1,11 +1,9 @@
+import React from "react";
+
 const Child = (props) => {
-  const old = 23;
-  props.dataReciver(old);
-  return (
-    <div>
-      <h1>I am child</h1>
-    </div>
-  );
+  const data = "I am from child";
+  props.handleReciver(data);
+  return <div></div>;
 };
 
 export default Child;
