@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import Child from "./components/Child";
+import NewTodo from "./NewTodo";
 
 const App = () => {
   const [reciver, setReciver] = useState("");
-  const handleReciver = (data) => {
-    setReciver(data);
+
+  const handleReciver = (todo) => {
+    setReciver(todo);
   };
   return (
     <div>
-      <Child handleReciver={handleReciver} />
-      <p>{reciver}</p>
+      <NewTodo handleReciver={handleReciver} />
+      <h2>{reciver}</h2>
     </div>
   );
 };
