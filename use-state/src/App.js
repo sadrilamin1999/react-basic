@@ -1,10 +1,12 @@
 import React from "react";
 import State from "./components/State";
+import User from "./components/User";
 
 const App = () => {
   return (
     <div>
-      <State />
+      {/* <State /> */}
+      <User />
     </div>
   );
 };
