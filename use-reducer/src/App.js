@@ -1,23 +1,28 @@
-import React, { useState } from "react";
+import { useReducer } from "react";
+
+const initialState = 20;
+
+const reducer = (state, action) => {
+  switch (action) {
+    case "buy":
+      return state - 1;
+    case "restock":
+      return state + 1;
+    case "reset":
+      return initialState;
+    default:
+      return state;
+  }
+};
 
 const App = () => {
-  const [burger, setBurger] = useState(0);
-
-  const handleIncrement = () => {
-    setBurger((prevBurger) => prevBurger + 1);
-  };
-  const handleDecrement = () => {
-    setBurger((prevBurger) => prevBurger - 1);
-  };
-  const handleReset = () => {
-    setBurger(0);
-  };
+  const [numberOfBurger, dispatch] = useReducer(reducer, initialState);
   return (
     <div>
-      <h1>Total Burgers: {burger}</h1>
-      <button onClick={handleIncrement}>+</button>
-      <button onClick={handleDecrement}>-</button>
-      <button onClick={handleReset}>🔄</button>
+      <h1>Number of burger: {numberOfBurger}</h1>
+      <button onClick={() => dispatch("buy")}>Buy</button>
+      <button onClick={() => dispatch("restock")}>Restock</button>
+      <button onClick={() => dispatch("reset")}>Reset</button>
     </div>
   );
 };
