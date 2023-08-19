@@ -1,28 +1,42 @@
 import { useReducer } from "react";
 
-const initialState = 20;
-
+const initialState = {
+  burgers: 20,
+  pizza: 50,
+};
 const reducer = (state, action) => {
-  switch (action) {
+  switch (action.type) {
     case "buy":
-      return state - 1;
-    case "restock":
-      return state + 1;
+      return {
+        ...state,
+        burgers: state.burgers - action.payload,
+      };
+    case "restore":
+      return {
+        ...state,
+        burgers: state.burgers + action.payload,
+      };
     case "reset":
-      return initialState;
+      return {
+        ...state,
+        burgers: action.payload,
+      };
     default:
       return state;
   }
 };
-
 const App = () => {
-  const [numberOfBurger, dispatch] = useReducer(reducer, initialState);
+  const [resturent, dispatch] = useReducer(reducer, initialState);
   return (
     <div>
-      <h1>Number of burger: {numberOfBurger}</h1>
-      <button onClick={() => dispatch("buy")}>Buy</button>
-      <button onClick={() => dispatch("restock")}>Restock</button>
-      <button onClick={() => dispatch("reset")}>Reset</button>
+      <h1>Total burgers: {resturent.burgers}</h1>
+      <button onClick={() => dispatch({ type: "buy", payload: 5 })}>Buy</button>
+      <button onClick={() => dispatch({ type: "restore", payload: 100 })}>
+        Restore
+      </button>
+      <button onClick={() => dispatch({ type: "reset", payload: 0 })}>
+        Reset
+      </button>
     </div>
   );
 };
