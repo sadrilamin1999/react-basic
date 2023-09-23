@@ -1,20 +1,17 @@
 const { createStore } = require("redux");
 
 const INCREMENT = "INCREMENT";
-const DECREMENT = "DECREMENT";
-const RESET = "RESET";
 
 const initialState = {
   count: 0,
 };
-
 const incrementCounter = () => {
   return {
     type: INCREMENT,
   };
 };
 
-const counterReducer = (state = initialState, action) => {
+const countReducer = (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
       return {
@@ -27,7 +24,7 @@ const counterReducer = (state = initialState, action) => {
   }
 };
 
-const store = createStore(counterReducer);
+const store = createStore(countReducer);
 store.subscribe(() => {
   console.log(store.getState());
 });
