@@ -16,6 +16,7 @@ const MakeGoals = () => {
 
   return (
     <div>
+      <h1>Make goal</h1>
       <h1 ref={argRef}>Argentina: {goals.arg}</h1>
       <h1 ref={braRef}>Brazil: {goals.bra}</h1>
     </div>
