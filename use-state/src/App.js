@@ -5,7 +5,7 @@ import User from "./components/User";
 const App = () => {
   return (
     <div>
-      {/* <State /> */}
+      <State />
       <User />
     </div>
   );
