@@ -1,16 +1,25 @@
 import { useState } from "react";
-import Child from "./components/Child";
 
 const App = () => {
-  const [data, setData] = useState("");
-  const handleChild = (childData) => {
-    setData(childData);
-  };
+  const [count, setCount] = useState(0);
   return (
-    <div>
-      <h2>This is parent</h2>
-      <h2>{data}</h2>
-      <Child onClidData={handleChild} />
+    <div style={{ textAlign: "center" }}>
+      <h1>Counte app</h1>
+      <p>{count}</p>
+      <button
+        onClick={() => {
+          setCount((prevCount) => prevCount + 1);
+        }}
+      >
+        Increment
+      </button>
+      <button
+        onClick={() => {
+          setCount((prevCount) => prevCount - 1);
+        }}
+      >
+        Decrement
+      </button>
     </div>
   );
 };
