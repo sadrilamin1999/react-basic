@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+h3 {
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+p,
+li {
+  font-size: 1.6rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.bio-container {
+  width: 500px;
+  height: auto;
+  margin: 100px auto;
+  border: 1px solid gray;
+  padding: 30px;
+}
+
+.skills {
+  padding: 20px 0;
+}
+.skills ul {
+  display: flex;
+  gap: 15px;
+}
+.skills ul li {
+  background-color: gainsboro;
+  padding: 3px 8px;
+}
+.links ul {
+  display: flex;
+  gap: 15px;
+}

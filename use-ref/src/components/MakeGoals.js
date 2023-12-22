@@ -2,16 +2,23 @@ import { useEffect, useRef } from "react";
 
 const MakeGoals = () => {
   const goals = {
-    arg: 3,
-    bra: 3,
+    arg: 0,
+    bra: 1,
   };
   const argRef = useRef(null);
   const braRef = useRef(null);
 
   useEffect(() => {
-    goals.arg > goals.bra
-      ? (argRef.current.style.color = "blue")
-      : (braRef.current.style.color = "green");
+    if (goals.arg > goals.bra) {
+      argRef.current.style.color = "blue";
+    }
+    if (goals.bra > goals.arg) {
+      braRef.current.style.color = "green";
+    }
+    if (goals.arg === goals.bra) {
+      argRef.current.style.color = "yellow";
+      braRef.current.style.color = "yellow";
+    }
   }, []);
 
   return (
