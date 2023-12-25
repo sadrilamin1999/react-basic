@@ -1,11 +1,11 @@
-const Skills = () => {
+const Skills = ({ skills }) => {
   return (
     <div className="skills">
       <h3>Skills: </h3>
       <ul>
-        <li>JavaScript</li>
-        <li>TypeScript</li>
-        <li>React</li>
+        {skills.map((skill) => (
+          <li>skill</li>
+        ))}
       </ul>
     </div>
   );
