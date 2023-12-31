@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import Profile from "./components/Profile";
+import Counter from "./components/Counter";
 
 export default class App extends Component {
   render() {
     return (
       <div>
-        <Profile />
+        <Counter />
       </div>
     );
   }

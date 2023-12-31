@@ -4,7 +4,7 @@ const Skills = ({ skills }) => {
       <h3>Skills: </h3>
       <ul>
         {skills.map((skill) => (
-          <li>skill</li>
+          <li>{skill}</li>
         ))}
       </ul>
     </div>
