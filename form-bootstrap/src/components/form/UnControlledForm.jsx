@@ -1,10 +1,19 @@
 import React, { Component } from "react";
 
 export default class UnControlledForm extends Component {
+  submitHandler = (e) => {
+    e.preventDefault();
+    const data = {};
+    data.name = e.target.name.value;
+    data.email = e.target.email.value;
+    data.password = e.target.password.value;
+    console.log(data);
+    e.target.reset();
+  };
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.submitHandler}>
           <input
             className="form-control my-2"
             type="text"
