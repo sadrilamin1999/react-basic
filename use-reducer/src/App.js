@@ -1,4 +1,5 @@
 import Counter from "./components/Counter";
+import Mango from "./components/Mango";
 import Store from "./components/Store";
 
 const App = () => {
@@ -6,6 +7,7 @@ const App = () => {
     <>
       <Counter />
       <Store />
+      <Mango />
     </>
   );
 };
