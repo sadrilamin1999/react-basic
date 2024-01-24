@@ -40,6 +40,7 @@ const Mango = () => {
         onClick={() => {
           dispatch({ type: "restock", payload: 1 });
         }}
+        disabled={mangoShop.mangos >= 20}
       >
         Restock
       </button>
