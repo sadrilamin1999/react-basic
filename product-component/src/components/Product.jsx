@@ -1,11 +1,9 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { CountConetxt } from "../Pages/ProductPage";
 
 const Product = ({ product }) => {
-  const [count, setCount] = useState(0);
+  const cartHandler = useContext(CountConetxt);
 
-  const cartHandler = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
   return (
     <div className="card">
       <div className="card-header">
@@ -21,7 +19,6 @@ const Product = ({ product }) => {
         </div>
         <div className="price">
           <h4>{product.price}</h4>
-          <p>{count}</p>
         </div>
       </div>
 

@@ -1,10 +1,10 @@
 import React from "react";
 
-const Navbar = () => {
+const Navbar = ({ count }) => {
   return (
     <nav className="navbar">
       <div className="container">
-        <div className="total">{10}</div>
+        <div className="total">{count}</div>
       </div>
     </nav>
   );
